@@ -1,24 +1,18 @@
-import React, { useCallback } from "react";
-import ReactFlowRender, {
+import React, { useState, useCallback } from "react";
+import ReactFlow, {
   addEdge,
   useNodesState,
   useEdgesState,
   ConnectionLineType,
 } from "react-flow-renderer";
 import { nodes as initialNodes, edges as initialEdges } from "./elements";
-import {
-  Button,
-  FormControl,
-  Grid,
-  MenuItem,
-  Select,
-  TextField,
-} from "@mui/material";
+import FlowModal from "./FlowModal";
+import { Button } from "@mui/material";
 
 function MyReactFlow() {
-  const [nodes, , onNodesChange] = useNodesState(initialNodes);
+  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-
+  const [isModalVisible, setIsModalVisible] = useState(false);
   const onConnect = useCallback(
     (params) =>
       setEdges((eds) =>
@@ -34,40 +28,58 @@ function MyReactFlow() {
       ),
     [setEdges]
   );
+  const getNodeId = () => Math.random();
+
+  const onAdd = useCallback(
+    (data) => {
+      const maxX = nodes.reduce(
+        (max, node) => (node.position.x > max ? node.position.x : max),
+        0
+      );
+
+      const newX = maxX + 30;
+
+      const newNode = {
+        id: String(getNodeId()),
+        data: { label: data },
+        position: {
+          x: newX,
+          y: 0,
+        },
+      };
+      setNodes((nds) => nds.concat(newNode));
+    },
+    [setNodes, nodes]
+  );
+
+  function displayCustomNamedNodeModal() {
+    setIsModalVisible(true);
+  }
+  function handleCancel() {
+    setIsModalVisible(false);
+  }
+  function handleOk(data) {
+    onAdd(data.nodeName);
+    setIsModalVisible(false);
+  }
 
   return (
     <div style={{ height: "100vh", margin: "10px" }}>
-      <Grid container alignItems="center" spacing={2}>
-        <Grid item>
-          <FormControl sx={{ minWidth: 120 }}>
-            <Select
-              label="Selecione"
-              name="select"
-              // value={nodeType}
-              // onChange={(e) => setNodeType(e.target.value)}
-            >
-              <MenuItem value="default">Default</MenuItem>
-              <MenuItem value="input">Input</MenuItem>
-              <MenuItem value="output">Output</MenuItem>
-            </Select>
-          </FormControl>
-        </Grid>
-        <Grid item>
-          <TextField
-            id="outlined-basic"
-            label="Nome"
-            // onChange={(event) => setnodeName(event.target.value)}
-            variant="outlined"
-          />
-        </Grid>
-        <Grid item>
-          <Button variant="outlined" color="primary">
-            Adicionar
-          </Button>
-        </Grid>
-      </Grid>
+      <FlowModal
+        isModalVisible={isModalVisible}
+        onCancel={handleCancel}
+        onOk={handleOk}
+      />
 
-      <ReactFlowRender
+      <Button
+        variant="contained"
+        color="success"
+        onClick={displayCustomNamedNodeModal}
+      >
+        NOVO CARD
+      </Button>
+
+      <ReactFlow
         nodes={nodes}
         edges={edges}
         onNodesChange={onNodesChange}

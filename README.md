@@ -1,70 +1,42 @@
-# Getting Started with Create React App
+## React Flow
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto simples que demonstra o uso da biblioteca React Flow para criar um gráfico de fluxo interativo em uma aplicação React.
 
-## Available Scripts
+### Recursos
 
-In the project directory, you can run:
+- **Adição de nós:** Clique em qualquer espaço vazio no canvas para adicionar um novo nó ao gráfico.
+- **Conexão de nós:** Arraste de um nó para outro para criar uma conexão entre eles.
+- **Edição de texto:** Clique duas vezes em um nó para editar seu texto.
+- **Exclusão de nós:** Clique com o botão direito em um nó para excluí-lo do gráfico.
 
-### `npm start`
+### Perguntas Frequentes
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+**1. O que é React Flow?**
+React Flow é uma biblioteca React utilizada para criar interfaces de usuário com diagramas de fluxo interativos e personalizáveis.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**2. Quais são os principais recursos do React Flow?**
+Alguns dos principais recursos do React Flow incluem:
 
-### `npm test`
+- Criação de diagramas de fluxo com nós e conexões.
+- Suporte a arrastar e soltar para reorganizar os elementos.
+- Customização de estilos e comportamentos.
+- Capacidade de lidar com eventos de interação, como clicar e arrastar.
+- Suporte para zoom e pan para diagramas grandes.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**3. Quais são os tipos de elementos que podem ser criados com o React Flow?**
+O React Flow permite criar e personalizar nós e conexões para representar diferentes elementos de um diagrama, como caixas, formas geométricas, setas, etc.
 
-### `npm run build`
+**4. É possível personalizar a aparência dos elementos no diagrama usando o React Flow?**
+Sim, o React Flow oferece uma ampla gama de opções de personalização. Você pode definir estilos para nós, conexões e até mesmo para o plano de fundo do diagrama.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+**5. Como lidar com eventos de interação, como clicar em um nó ou arrastar uma conexão?**
+O React Flow fornece métodos e gatilhos de eventos para lidar com interações do usuário. Você pode usar props como `onNodeClick` e `onConnect` para capturar e responder a esses eventos.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**6. O React Flow suporta diagramas responsivos?**
+Sim, o React Flow é compatível com layouts responsivos. Ele se adapta automaticamente ao tamanho do contêiner onde está sendo renderizado.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**7. Existem exemplos ou documentação disponíveis para ajudar na aprendizagem do React Flow?**
+Sim, o React Flow possui uma documentação abrangente e exemplos de código disponíveis em seu repositório oficial no GitHub.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**8. O React Flow é compatível com outras bibliotecas ou frameworks?**
+O React Flow é construído especificamente para o React, mas pode ser integrado com outras bibliotecas ou frameworks que são compatíveis com o React, como Redux para gerenciamento de estado.
