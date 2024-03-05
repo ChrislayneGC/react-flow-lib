@@ -40,3 +40,4 @@ Sim, o React Flow possui uma documentação abrangente e exemplos de código dis
 
 **8. O React Flow é compatível com outras bibliotecas ou frameworks?**
 O React Flow é construído especificamente para o React, mas pode ser integrado com outras bibliotecas ou frameworks que são compatíveis com o React, como Redux para gerenciamento de estado.
+# react-flow-lib
